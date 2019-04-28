@@ -1,0 +1,95 @@
+         <!DOCTYPE html>
+                <html>
+                <head>
+                <meta charset="UTF-8">
+                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                </head>
+
+                <body>
+                    <div class="container">
+          <form>
+            <div class="control-group ">
+                <div class="col-md-12" style="padding: 0px">
+                     <div class="col-md-3">
+                <label >Description Item 1</label>
+                <input class="form-control" type="text">
+           </div>
+              <div class="col-md-3">
+                <label >Quantity</label>
+                <input class="form-control" type="Number" id="qty"  onkeyup="getValues()" />
+              </div>
+              <div class="col-md-3">
+                <label >Unit Price</label>
+                <input class="form-control" type="Number" id="price"  onkeyup="getValues()" />
+              </div>
+               <div class="col-md-3">
+                <label>Amount</label>
+                <input class="form-control" type="text" id="amount"  onkeyup="getValues()" />
+              </div>
+                    
+                </div>
+                   <div class="col-md-12"style="padding: 0px">
+                     <div class="col-md-3">
+                <label >Description Item 2</label>
+                <input class="form-control" type="text">
+           </div>
+              <div class="col-md-3">
+                <label >Quantity</label>
+                <input class="form-control" type="Number" id="qty1"  onkeyup="getValues()" />
+              </div>
+              <div class="col-md-3">
+                <label >Unit Price</label>
+                <input class="form-control" type="Number" id="price1"  onkeyup="getValues()" />
+              </div>
+               <div class="col-md-3">
+                <label>Amount</label>
+                <input class="form-control" type="text" id="amount1"  onkeyup="getValues()" />
+              </div>
+                    
+                </div><br>
+              
+                    <div class="col-md-12" style="width: 60%">
+                   
+                <label>Subtotal</label>
+                <input class="form-control" type="text" id="subtotal"  onkeyup="getValues()" />
+              </div>
+               <div class="col-md-12" style="width: 60%">
+                <label>Discount</label>
+                <input class="form-control" type="text" id="discount"  onkeyup="getValues()" />
+              </div>
+              <div class="col-md-12" style="width: 60%">
+                <label>Amount Due</label>
+                <input class="form-control" type="text" id="amountDue"  onkeyup="getValues()" />
+              </div>
+                </div>
+            
+          </div>
+          </form>
+        </div>
+
+
+                <script>
+                function getValues(){
+                    var Value1 = Number(document.getElementById("qty").value);
+                    var Value2 = Number(document.getElementById("price").value);
+                    var Value3 = Number(document.getElementById("qty1").value);
+                    var Value4 = Number(document.getElementById("price1").value);
+                    var discount =Number(document.getElementById("discount").value);
+                    
+                    var amount = (Value1 * Value2);
+                    var amount1= (Value3 * Value4);
+                    var subtotal= amount + amount1;
+                    var total =  (subtotal-(subtotal*(discount/100)));
+                    document.getElementById("amount").value = amount;
+                    document.getElementById("amount1").value = amount1;
+                    document.getElementById("subtotal").value = subtotal;
+                    document.getElementById("amountDue").value = total;
+
+
+
+                }
+                </script>
+            </body>
+            </html>
